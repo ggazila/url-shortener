@@ -1,15 +1,13 @@
 package com.example.urlshortener.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.redis.core.RedisHash;
 
 import java.time.LocalDateTime;
 
-@Entity
 @Data
-@Table(name = "shortened_urls")
+@RedisHash("shortened_url")
 public class ShortenedUrl {
     @Id
     private String id;
